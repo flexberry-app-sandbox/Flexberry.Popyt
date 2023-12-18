@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Специалист",
+  "name": "IISPopytСпециалистE",
+  "className": "СпециалистE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-popyt-специалист",
+      "modelProjection": "СпециалистE"
+    }
+  ]
+}

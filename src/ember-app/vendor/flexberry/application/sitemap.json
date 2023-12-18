@@ -1,0 +1,36 @@
+﻿{
+  "applicationCaption": "Popyt",
+  "applicationTitle": "Popyt",
+  "items": [
+    {
+      "link": null,
+      "menuName": "popyt",
+      "caption": "Popyt",
+      "title": "Popyt",
+      "children": [
+        {
+          "link": "i-i-s-popyt-причин-увольн-l",
+          "menuName": null,
+          "caption": "Причин увольн",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-popyt-специалист-l",
+          "menuName": null,
+          "caption": "Специалист",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-popyt-анкеты-l",
+          "menuName": null,
+          "caption": "Анкеты",
+          "title": "",
+          "children": null
+        }
+      ]
+    }
+  ],
+  "mobile": true
+}

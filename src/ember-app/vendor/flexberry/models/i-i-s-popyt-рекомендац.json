@@ -1,0 +1,78 @@
+﻿{
+  "name": "IISPopytРекомендац",
+  "modelName": "i-i-s-popyt-рекомендац",
+  "className": "Рекомендац",
+  "nameSpace": "IIS.Popyt",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "рабочие",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "руководители",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "специалисты",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "причинУвольн",
+      "relatedTo": "i-i-s-popyt-причин-увольн",
+      "inverse": "рекомендации"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "РекомендацE",
+      "modelName": "i-i-s-popyt-рекомендац",
+      "attrs": [
+        {
+          "name": "специалисты",
+          "caption": "Специалисты",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "руководители",
+          "caption": "Руководители",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "рабочие",
+          "caption": "Рабочие",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

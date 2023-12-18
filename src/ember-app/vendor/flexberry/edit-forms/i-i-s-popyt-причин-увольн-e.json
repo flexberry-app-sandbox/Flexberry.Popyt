@@ -1,0 +1,23 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Специалист",
+      "projection": "СпециалистL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Причин увольн",
+  "name": "IISPopytПричинУвольнE",
+  "className": "ПричинУвольнE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-popyt-причин-увольн",
+      "modelProjection": "ПричинУвольнE"
+    }
+  ]
+}

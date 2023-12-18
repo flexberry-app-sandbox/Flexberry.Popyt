@@ -1,0 +1,92 @@
+<h3 class="ui header">{{t "forms.i-i-s-popyt-анкеты-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-popyt-анкеты-e.датаЗаполн-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.датаЗаполн
+      class=(if (v-get validationModel "датаЗаполн" "isInvalid") "error")
+      data-test-i-i-s-popyt-анкеты-e-датаЗаполн=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "датаЗаполн" "message")}}
+  </div>
+  <div class="field" data-test-i-i-s-popyt-анкеты-e-относКатСотр="true">
+    <label>{{t "forms.i-i-s-popyt-анкеты-e.относКатСотр-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-popyt-катег-сотруд")
+      value=model.относКатСотр
+      class=(if (v-get validationModel "относКатСотр" "isInvalid") "error")
+      readonly=readonly
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "относКатСотр" "message")}}
+  </div>
+  <div class="field" data-test-i-i-s-popyt-анкеты-e-какойСтаж="true">
+    <label>{{t "forms.i-i-s-popyt-анкеты-e.какойСтаж-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-popyt-стаж")
+      value=model.какойСтаж
+      class=(if (v-get validationModel "какойСтаж" "isInvalid") "error")
+      readonly=readonly
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "какойСтаж" "message")}}
+  </div>
+  <div class="field" data-test-i-i-s-popyt-анкеты-e-возрастСотруд="true">
+    <label>{{t "forms.i-i-s-popyt-анкеты-e.возрастСотруд-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-popyt-возраст")
+      value=model.возрастСотруд
+      class=(if (v-get validationModel "возрастСотруд" "isInvalid") "error")
+      readonly=readonly
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "возрастСотруд" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.коммент
+      class=(if (v-get validationModel "коммент" "isInvalid") "error")
+      label=(t "forms.i-i-s-popyt-анкеты-e.коммент-caption")
+      data-test-i-i-s-popyt-анкеты-e-коммент=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "коммент" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-popyt-анкеты-e.оценПричУвольн-caption"}}</label>
+    {{flexberry-groupedit
+      componentName="оценПричУвольнGroupEdit"
+      mainModelProjection=modelProjection
+      modelProjection=modelProjection.attributes.оценПричУвольн
+      content=model.оценПричУвольн
+      readonly=readonly
+      orderable=false
+      class=(if (v-get validationModel "оценПричУвольн" "isInvalid") "error")
+      data-test-i-i-s-popyt-анкеты-e-оценПричУвольн=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "оценПричУвольн" "message")}}
+  </div>
+</form>

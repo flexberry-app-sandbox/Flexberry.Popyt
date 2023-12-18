@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-popyt-специалист-e",
+  "editForm": "i-i-s-popyt-специалист-e",
+  "external": false,
+  "caption": "Специалист",
+  "name": "IISPopytСпециалистL",
+  "className": "СпециалистL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-popyt-специалист",
+      "modelProjection": "СпециалистL"
+    }
+  ]
+}

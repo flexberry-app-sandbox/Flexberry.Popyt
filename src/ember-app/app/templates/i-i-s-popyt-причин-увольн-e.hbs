@@ -1,0 +1,70 @@
+<h3 class="ui header">{{t "forms.i-i-s-popyt-причин-увольн-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-popyt-причин-увольн-e.датаЗаполн-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.датаЗаполн
+      class=(if (v-get validationModel "датаЗаполн" "isInvalid") "error")
+      data-test-i-i-s-popyt-причин-увольн-e-датаЗаполн=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "датаЗаполн" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-popyt-причин-увольн-e.специалист-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.специалист
+      displayAttributeName="фИО"
+      autocomplete=true
+      relationName="специалист"
+      projection="СпециалистL"
+      title=(t "forms.i-i-s-popyt-причин-увольн-e.специалист-caption")
+      readonly=readonly
+      componentName="специалистLookup"
+      class=(if (v-get validationModel "специалист" "isInvalid") "error")
+      data-test-i-i-s-popyt-причин-увольн-e-специалист=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "специалист" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-popyt-причин-увольн-e.рекомендации-caption"}}</label>
+    {{flexberry-groupedit
+      componentName="рекомендацииGroupEdit"
+      mainModelProjection=modelProjection
+      modelProjection=modelProjection.attributes.рекомендации
+      content=model.рекомендации
+      readonly=readonly
+      orderable=false
+      class=(if (v-get validationModel "рекомендации" "isInvalid") "error")
+      data-test-i-i-s-popyt-причин-увольн-e-рекомендации=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "рекомендации" "message")}}
+  </div>
+</form>
